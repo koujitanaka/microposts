@@ -17,6 +17,8 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+  
+  redirect_to root_path unless(current_user == @user)
 
   def edit
     @user = User.find(params[:id])
@@ -35,6 +37,6 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :country_code, :profile, :password, :password_confirmation)
     end
 end
