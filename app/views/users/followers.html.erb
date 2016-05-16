@@ -1,4 +1,11 @@
 <h1>followers</h1>
 <% @follower_users.each do |user| %>
-   <%= user.name %>
+   <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= link_to @user.name,  followers_user_path(@user) %>
+      </h1>
+    </section>
+  </aside>
 <% end %>
