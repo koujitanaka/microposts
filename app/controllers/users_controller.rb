@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def create
       @user = User.new(user_params)
-      if @user.save
+    if @user.save
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
     else
@@ -32,7 +32,17 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
-
+  
+  def followings
+    @user = User.find(params[:id])
+    @following_users = @user.following_users
+  end
+  
+  def followers
+    @user = User.find(params[:id])
+    @follower_users = @user.following_users
+  end
+  
   private
 
     def user_params
