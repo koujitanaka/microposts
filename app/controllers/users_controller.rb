@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update]
   before_action :collect_user, only: [:edit, :update]
+  
+  def index
+    @user = user.page(params[:page])
+  end
 
   def show
     @user = User.find(params[:id])

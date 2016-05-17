@@ -4,7 +4,7 @@
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %>
-        <%= link_to @user.name,  followers_user_path(@user) %>
+        <%= @user.name %>
       </h1>
     </section>
   </aside>
