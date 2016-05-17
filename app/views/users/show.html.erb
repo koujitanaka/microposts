@@ -19,3 +19,4 @@
   <%= link_to 'followings',  followings_user_path(@user) %>
   <%= link_to 'followers',  followers_user_path(@user) %>
 </div>
+<%= paginate @microposts %>
