@@ -44,6 +44,8 @@ gem 'twitter-bootstrap-rails'
 
 gem 'carrierwave'
 
+gem 'cloudinary'
+
 #gem 'rmagick'
 
 group :development, :test do
